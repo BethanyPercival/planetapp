@@ -1,9 +1,11 @@
-package com.percival.beth.planetapp;
+package com.percival.beth.planetapp.ui.planetlist;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.percival.beth.planetapp.R;
+
+public class PlanetListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
