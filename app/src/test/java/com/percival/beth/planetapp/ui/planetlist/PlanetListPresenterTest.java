@@ -1,5 +1,8 @@
 package com.percival.beth.planetapp.ui.planetlist;
 
+import com.percival.beth.planetapp.model.Planet;
+import com.percival.beth.planetapp.network.response.GetPlanetsResponse;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,11 +21,13 @@ public class PlanetListPresenterTest {
     @Mock
     private Planet mockPlanet;
     @Mock
-    private List<Planet> mockGetPlanetsResponse;
+    private GetPlanetsResponse mockGetPlanetsResponse;
 
     private PlanetListPresenter mockPresenter;
 
-    private static final Planet NULL_RESPONSE = new Planet();
+    private static final GetPlanetsResponse NULL_RESPONSE = new GetPlanetsResponse();
+    private static final Planet EMPTY_PLANET = new Planet();
+
     private static final String PLANET_NAME = "Planet Name";
 
     @Before
@@ -39,8 +44,8 @@ public class PlanetListPresenterTest {
 
     @Test
     public void shouldCallPopulateList_whenDataReadyIsCalled() {
-        NULL_RESPONSE.setName(PLANET_NAME);
-        mockPresenter.onDataReady(NULL_RESPONSE);
+        EMPTY_PLANET.setName(PLANET_NAME);
+        mockPresenter.onDataReady(mockGetPlanetsResponse);
 
         verify(mockView).populateList(mockGetPlanetsResponse);
     }

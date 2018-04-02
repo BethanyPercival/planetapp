@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Planet App</string>
+    <string name="error_generic_try_again_later">Something went wrong, please try again later</string>
 </resources>
